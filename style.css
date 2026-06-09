@@ -1,0 +1,784 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  background: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  height: 70px;
+  top: 0;
+  z-index: 1;
+}
+
+
+.upgrade {
+  background: #2c2468;
+  color: #8d86ff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+
+
+.chat-container {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+}
+
+.user {
+  background: #303030;
+  padding: 15px;
+  border-radius: 20px;
+  width: max-content;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+.bot {
+  background: #171717;
+  padding: 15px;
+  border-radius: 20px;
+  width: max-content;
+  max-width: 80%;
+  margin-top: 15px;
+  
+}
+
+
+
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.plus,
+.mic,
+.send {
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 25px;
+}
+
+input {
+  flex: 1;
+  background: #1d1d1d;
+  border: none;
+  color: white;
+  padding: 18px;
+  border-radius: 30px;
+  font-size: 18px;
+}
+
+.thinking{
+    display:flex;
+    gap:6px;
+}
+
+.thinking span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    animation:bounce 1s infinite;
+}
+
+.thinking span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.thinking span:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes bounce{
+
+    0%,80%,100%{
+        transform:scale(0);
+        opacity:.3;
+    }
+
+    40%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing:border-box;
+    width: 100%;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0f172a;
+    color:#f8fafc;
+    line-height:1.6;
+    width: 100%;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --bg:#0f172a;
+    --sidebar:#111827;
+    --card:#1e293b;
+
+    --primary:#6366f1;
+    --primary-hover:#4f46e5;
+
+    --text:#f8fafc;
+    --text-muted:#94a3b8;
+
+    --border:rgba(255,255,255,.08);
+
+    --shadow-sm:
+    0 4px 12px rgba(0,0,0,.15);
+
+    --shadow-md:
+    0 10px 30px rgba(0,0,0,.25);
+
+    --shadow-lg:
+    0 20px 40px rgba(0,0,0,.35);
+
+    --radius:18px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    position: sticky;
+    top: 0;
+   
+
+    height:72px;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(15,23,42,.85);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid var(--border);
+
+    z-index: 1;
+}
+
+.nav-container{
+
+    width: 100%;
+    max-width:1400px;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    
+}
+
+.logo{
+
+    font-size:27px;
+    font-weight:700;
+    padding: 27px;
+display: inline;
+    letter-spacing: .5px;
+}
+
+nav ul{
+
+    display: flex;
+    gap:20px;
+    padding: 10px;
+    list-style:none;
+}
+
+nav a{
+    font-size: 14px;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    transition:.25s;
+}
+
+nav a:hover{
+
+    color:var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+}
+
+.hero-content{
+
+    max-width:900px;
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    line-height:1.1;
+
+    margin-bottom:24px;
+}
+
+.hero p{
+
+    font-size:22px;
+
+    color:var(--text-muted);
+
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:16px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+
+    background:var(--primary);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    transition:.25s;
+
+    box-shadow:var(--shadow-md);
+}
+
+.btn:hover{
+
+    background:var(--primary-hover);
+
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+
+    border:1px solid var(--border);
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 28px;
+
+    border-radius:14px;
+
+    transition:.25s;
+}
+
+.btn-secondary:hover{
+
+    background:rgba(255,255,255,.05);
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+#features{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 40px;
+}
+
+#features h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:60px;
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:24px;
+}
+
+.card{
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:32px;
+
+    transition:.3s;
+
+    box-shadow:var(--shadow-md);
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.card h3{
+
+    margin-bottom:12px;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+#pricing{
+
+    padding:100px 40px;
+}
+
+.pricing-card{
+
+    max-width:420px;
+
+    margin:auto;
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-lg);
+}
+
+.pricing-card h1{
+
+    margin:24px 0;
+}
+
+.pricing-card ul{
+
+    list-style:none;
+
+    margin:24px 0;
+}
+
+.pricing-card li{
+
+    margin:14px 0;
+}
+
+.pricing-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.pricing-card button:hover{
+
+    background:var(--primary-hover);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    color:var(--text-muted);
+}
+
+/* =========================
+   CHAT LAYOUT
+========================= */
+
+.chat-layout{
+
+    display:flex;
+
+    height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+
+    width:270px;
+
+    background:#171717;
+
+    border-right:1px solid var(--border);
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:14px;
+
+    gap:16px;
+}
+
+.sidebar h2{
+
+    font-size:22px;
+}
+
+.sidebar button{
+
+    height:48px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#2f2f2f;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.sidebar button:hover{
+
+    background:#3b3b3b;
+}
+
+.history{
+
+    margin-top:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.history p{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.history p:hover{
+
+    background:#2a2a2a;
+}
+
+/* =========================
+   CHAT MAIN
+========================= */
+
+.chat-main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#212121;
+}
+
+.messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px 24px;
+}
+
+.ai-message,
+.user-message{
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    margin-bottom:18px;
+
+    max-width:85%;
+}
+
+.ai-message{
+
+    background:#2f2f2f;
+
+    border:1px solid var(--border);
+
+    align-self:flex-start;
+}
+
+.user-message{
+
+    background:var(--primary);
+
+    margin-left:auto;
+}
+
+/* =========================
+   PROMPT AREA
+========================= */
+
+.input-area{
+
+    padding:24px;
+
+    background:
+    linear-gradient(
+        transparent,
+        #212121 25%
+    );
+}
+
+.prompt-box{
+
+    max-width:900px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:24px;
+
+    background:#2f2f2f;
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.prompt-box input{
+
+    flex:1;
+
+    background:transparent;
+
+    border:none;
+
+    outline:none;
+
+    color:white;
+
+    font-size:16px;
+}
+
+.prompt-box button{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* =========================
+   AUTH PAGES
+========================= */
+
+.auth-container{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+.auth-box{
+
+    width:100%;
+    max-width:450px;
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow-lg);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+}
+
+.auth-box h1{
+
+    text-align:center;
+
+    margin-bottom:12px;
+}
+
+.auth-box input{
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    background:#1e293b;
+
+    color:white;
+}
+
+.auth-box input:focus{
+
+    border-color:var(--primary);
+
+    outline:none;
+}
+
+.auth-box button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.auth-box a{
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+}
